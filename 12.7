@@ -1,0 +1,25 @@
+# Abeyu Fentahun
+# PSID 1971090
+
+#This line of code represents the user being asked to input an age
+def get_age():
+    age = int(input())
+#This line of code represents that if the person is below 18 or above 75, it will come back as "invalid"
+    if 18 <= age <= 75:
+        return age
+    raise ValueError("Invalid age.")
+
+#This line of code represents the equation for fat burning heart rate
+def fat_burning_heart_rate(age):
+    return (220 - age) * 0.7
+
+#This line of code allows/blocks specific modules from running while the code is being ran
+if __name__ == "__main__":
+    try:
+        age = get_age()
+#This line of code represents what is going to be output if the age is valid
+        print("Fat burning heart rate for a", age, "year-old:", fat_burning_heart_rate(age), "bpm")
+    except ValueError as e:
+        print(e)
+#This line of code represents what is going to be output if the age is NOT valid
+        print("Could not calculate heart rate info. ")
