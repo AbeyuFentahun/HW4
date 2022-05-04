@@ -1,0 +1,21 @@
+# Abeyu Fentahun
+# PSID 1971090
+
+# This line of code represents define what the selection sort is
+def selection_sort_descend_trace(numbers):
+    for v in range(len(numbers) - 1):
+        m = v
+        for q in range(v + 1, len(numbers)):
+            if numbers[m] < numbers[q]:
+                m = q
+        numbers[v], numbers[m] = numbers[m], numbers[v]
+        for value in numbers:
+            print(value,end=" ")
+        print()
+    return numbers
+# This line of code represents a module being allowed or not allowed to run while the code is running
+if __name__ == "__main__":
+    numbers = []
+
+    numbers = [int(f) for f in input("").split()]
+    selection_sort_descend_trace(numbers)
