@@ -1,0 +1,23 @@
+# Abeyu Fentahun
+# PSID 1971090
+
+# This line of code represents a split input which are name and age
+parts = input().split()
+name = parts[0]
+
+while name != '-1':
+# This line of code represents the insert try/except blocks to catch the exception.
+    try:
+        age = int(parts[1]) + 1
+
+        # This line of code represents the printing of the name and age
+        print('{} {}'.format(name, age))
+
+    except ValueError:
+
+# This line of code represents the printing of the name and age as "0"
+        print('{} {}'.format(name, 0))
+
+# This line of code represents the next line
+    parts = input().split()
+    name = parts[0]
