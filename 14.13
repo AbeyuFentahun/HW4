@@ -1,0 +1,38 @@
+# Abeyu Fentahun
+# PSID 1971090
+
+# This line of code represents the Global variable
+num_calls = 0
+# This line of code represents "partition" is defined as
+def partition(user_ids, i, q):
+    pivot = user_ids[q]
+    index = i - 1
+    for t in range(i, q):
+        if user_ids[t] <= pivot:
+            index += 1
+            user_ids[index], user_ids[t] = user_ids[t], user_ids[index]
+    user_ids[index+1], user_ids[q] = user_ids[q], user_ids[index+1]
+    return index+1
+
+# This line of code represents "quicksort" is defined as
+def quicksort(user_ids, i, q):
+    if i < q:
+        piv = partition(user_ids, i, q)
+        quicksort(user_ids, i, piv-1)
+        quicksort(user_ids, piv+1, q)
+
+if __name__ == "__main__":
+    user_ids = []
+    user_id = input()
+    while user_id != "-1":
+        user_ids.append(user_id)
+        user_id = input()
+# This line of code represents the initial call to quicksort
+    quicksort(user_ids, 0, len(user_ids) - 1)
+    num_calls = int(2 * len(user_ids) - 1)
+# This line of code represents the print number of calls to quicksort
+    print(num_calls)
+
+# This line of code represents the print sorted user ids
+    for user_id in user_ids:
+        print(user_id)
